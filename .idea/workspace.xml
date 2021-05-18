@@ -3,8 +3,33 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="498e634e-88fa-4e6d-a1cf-b4c450776af2" name="Default Changelist" comment="" />
+    <list default="true" id="498e634e-88fa-4e6d-a1cf-b4c450776af2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/LaunchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/LaunchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/launch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/launch.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/flippingcoins/javafx/controller/LaunchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/flippingcoins/javafx/controller/LaunchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/launch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/launch.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +42,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -34,6 +62,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Fuad Jamilov\Desktop\FJ\Debrecen\4th semester\Software Eng\CoinGameJavaFX" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -66,27 +99,38 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1621343342493">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1621343342493" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1621358958462">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1621369724755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621358958462" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1621358958462">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621369724755" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1621369724755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621358958462" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1621358958462">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621369724755" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1621369724755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621358958462" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1621358958462">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621369724755" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1621369724755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621358958462" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621369724755" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1621336305247">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
