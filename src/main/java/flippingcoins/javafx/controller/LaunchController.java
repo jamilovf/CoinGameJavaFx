@@ -1,5 +1,6 @@
 package flippingcoins.javafx.controller;
 
+import flippingcoins.model.ResultState;
 import util.javafx.*;
 
 import javafx.event.ActionEvent;
@@ -16,6 +17,8 @@ import java.io.IOException;
 public class LaunchController {
 
     private FXMLLoader fxmlLoader = new FXMLLoader();
+
+    ResultState resultState = new ResultState();
 
     @FXML
     private TextField player1NameTextField;
@@ -39,6 +42,8 @@ public class LaunchController {
             errorLabel.setText("Player2, please, enter your name!!!");
         }
         else{
+            resultState.setPlayer1Name(player1NameTextField.getText());
+            resultState.setPlayer2Name(player2NameTextField.getText());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             ControllerHelper.loadAndShowFXML(fxmlLoader,"/fxml/game.fxml",stage);
         }

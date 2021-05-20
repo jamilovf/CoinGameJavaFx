@@ -25,9 +25,9 @@
     <list default="true" id="498e634e-88fa-4e6d-a1cf-b4c450776af2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/model/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/model/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/LaunchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/LaunchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/model/FlippingCoinsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/model/FlippingCoinsState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/flippingcoins/javafx/FlippingCoinsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/flippingcoins/javafx/FlippingCoinsApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/flippingcoins/javafx/controller/LaunchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/flippingcoins/javafx/controller/LaunchController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +62,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -113,30 +114,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1621343342493">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1621462641718">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1621343342493" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1621436444174">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1621462641718" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621467324306">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621436444174" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1621436444173">
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1621467324306" />
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1621469173646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621436444173" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1621436444173">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621469173646" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1621469173645">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621436444173" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1621436444174">
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621469173645" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1621469173645">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621436444174" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621469173645" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1621469173646">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621469173646" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1621336305247">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1621336305247" />
+    <state x="413" y="125" key="extract.method.dialog" timestamp="1621464851310">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="125" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1621464851310" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1621432082207">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
