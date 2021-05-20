@@ -81,6 +81,6 @@
             <Font name="SansSerif Regular" size="24.0" />
          </font></Label>
       <Button fx:id="switchButton" layoutX="276.0" layoutY="120.0" mnemonicParsing="false" onAction="#switchAction" prefHeight="23.0" prefWidth="52.0" text="Switch" />
-      <Button fx:id="restartButton" layoutX="276.0" layoutY="267.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="52.0" text="Restart" visible="false" />
+      <Button fx:id="restartButton" layoutX="270.0" layoutY="267.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Restart" visible="false" />
    </children>
 </AnchorPane>

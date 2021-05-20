@@ -74,7 +74,7 @@ public class GameController implements Initializable {
         var column= GridPane.getColumnIndex((Node) mouseEvent.getSource());
         ImageView im = (ImageView) mouseEvent.getTarget();
 
-        if(!gameState.isGameOver(gameState.coinState)) {
+        if(!isGameFinished()) {
             if(column == 9 && gameState.coinState.get(column) == 1){
                 endGameLabel.setText("Last coin cannot change from tail to head!");
             }
@@ -82,44 +82,72 @@ public class GameController implements Initializable {
                 gameState.coinState.set(column, 1);
                 modifyStepsOfPlayer();
                 im.setImage(tailImage);
+                if(isGameFinished()){
+                    endGame();
+                }
             }
             else {
                 gameState.coinState.set(column, 0);
                 modifyStepsOfPlayer();
                 im.setImage(headImage);
+                if(isGameFinished()){
+                    endGame();
+                }
             }
-        }
-        else {
-            if (player1Turn) {
-                endGameLabel.setText(player1NameLabel.getText() + " won the game!");
-            }
-            else {
-                endGameLabel.setText(player2NameLabel.getText() + " won the game!");
-            }
-            restartButton.setVisible(true);
-            switchButton.setDisable(true);
         }
     }
 
-    private void modifyStepsOfPlayer() {
+    private boolean isGameFinished() {
+        return gameState.isGameOver(gameState.coinState);
+    }
+
+    private void endGame() {
         if (player1Turn) {
+            endGameLabel.setText(player1NameLabel.getText() + " won the game!");
+        }
+        else {
+            endGameLabel.setText(player2NameLabel.getText() + " won the game!");
+        }
+        restartButton.setVisible(true);
+        switchButton.setDisable(true);
+    }
+
+    private void modifyStepsOfPlayer() {
+        if (player1Turn && player1Steps < 3) {
             player1Steps++;
-        } else {
+            resultState.setPlayer1Steps(resultState.getPlayer1Steps() + 1);
+            checkSteps(player1Steps);
+        }
+        else if(!player1Turn && player2Steps < 3) {
             player2Steps++;
+            resultState.setPlayer2Steps(resultState.getPlayer2Steps() + 1);
+            checkSteps(player2Steps);
+        }
+    }
+
+    private void checkSteps(int steps){
+        if(steps == 3){
+            switchPlayer();
         }
     }
 
     public void switchAction(ActionEvent actionEvent) throws IOException {
+        switchPlayer();
+    }
+
+    private void switchPlayer() {
         if((player1Turn && player1Steps == 0) || (!player1Turn && player2Steps == 0)){
             endGameLabel.setText("0 flips, please, flip coin!");;
         }
         else {
             if (player1Turn) {
                 player1Turn = false;
+                player1Steps = 0;
                 player1Icon.setImage(null);
                 player2Icon.setImage(playerIcon);
             } else {
                 player1Turn = true;
+                player2Steps = 0;
                 player2Icon.setImage(null);
                 player1Icon.setImage(playerIcon);
             }
