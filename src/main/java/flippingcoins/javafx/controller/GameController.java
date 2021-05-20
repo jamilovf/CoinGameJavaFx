@@ -13,6 +13,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import util.javafx.ControllerHelper;
 import util.json.JsonWriter;
 
 import java.io.IOException;
@@ -162,5 +164,10 @@ public class GameController implements Initializable {
                 player1Icon.setImage(playerIcon);
             }
         }
+    }
+
+    public void restartAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        ControllerHelper.loadAndShowFXML(fxmlLoader,"/fxml/launch.fxml",stage);
     }
 }
