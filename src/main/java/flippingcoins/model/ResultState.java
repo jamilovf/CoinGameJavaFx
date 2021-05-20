@@ -1,6 +1,10 @@
 package flippingcoins.model;
 
+
+import java.time.Instant;
+
 public class ResultState {
+
     private static String player1Name;
 
     private static String player2Name;
@@ -9,12 +13,32 @@ public class ResultState {
 
     private static int player2Steps = 0;
 
+    private Instant time;
+
+    private static String winner;
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
+
     public void setPlayer1Name(String player1Name) {
         this.player1Name = player1Name;
     }
 
     public void setPlayer2Name(String player2Name) {
         this.player2Name = player2Name;
+    }
+
+    public  Instant getTime() {
+        return time;
+    }
+
+    public void setTime(Instant time) {
+        this.time = time;
     }
 
     public void setPlayer1Steps(int player1Steps) {
