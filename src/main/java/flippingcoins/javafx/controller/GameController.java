@@ -126,6 +126,9 @@ public class GameController implements Initializable {
     }
 
     private void checkSteps(int steps){
+        if(isGameFinished()){
+            return;
+        }
         if(steps == 3){
             switchPlayer();
         }
