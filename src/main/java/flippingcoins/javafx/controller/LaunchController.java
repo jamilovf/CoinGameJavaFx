@@ -48,4 +48,9 @@ public class LaunchController {
             ControllerHelper.loadAndShowFXML(fxmlLoader,"/fxml/game.fxml",stage);
         }
     }
+
+    public void highScoresAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        ControllerHelper.loadAndShowFXML(fxmlLoader,"/fxml/results.fxml",stage);
+    }
 }

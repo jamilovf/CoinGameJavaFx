@@ -2,7 +2,6 @@ package flippingcoins.javafx.controller;
 
 import flippingcoins.model.FlippingCoinsState;
 import flippingcoins.model.ResultState;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,9 +13,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import util.json.JsonWriter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.Instant;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
@@ -57,6 +58,8 @@ public class GameController implements Initializable {
 
     ResultState resultState = new ResultState();
 
+    JsonWriter jsonWriter = new JsonWriter();
+
     private Image headImage = new Image(getClass().getResource("/images/head.png").toExternalForm());
 
     private Image tailImage = new Image(getClass().getResource("/images/tail.png").toExternalForm());
@@ -65,6 +68,7 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        resultState.setTime(Instant.now());
         player1NameLabel.setText(resultState.getPlayer1Name());
         player2NameLabel.setText(resultState.getPlayer2Name());
         player1Icon.setImage(playerIcon);
@@ -104,12 +108,15 @@ public class GameController implements Initializable {
     private void endGame() {
         if (player1Turn) {
             endGameLabel.setText(player1NameLabel.getText() + " won the game!");
+            resultState.setWinner(player1NameLabel.getText());
         }
         else {
             endGameLabel.setText(player2NameLabel.getText() + " won the game!");
+            resultState.setWinner(player2NameLabel.getText());
         }
         restartButton.setVisible(true);
         switchButton.setDisable(true);
+        jsonWriter.writer(resultState);
     }
 
     private void modifyStepsOfPlayer() {
