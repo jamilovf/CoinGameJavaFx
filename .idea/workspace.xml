@@ -23,12 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="498e634e-88fa-4e6d-a1cf-b4c450776af2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/LaunchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/LaunchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/ResultsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/ResultsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/model/ResultState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/model/ResultState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/results.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/results.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

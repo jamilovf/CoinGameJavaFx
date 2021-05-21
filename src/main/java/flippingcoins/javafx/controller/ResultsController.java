@@ -67,6 +67,9 @@ public class ResultsController {
             }
 
             tableView.setItems(playerResults);
+            score.setSortType(TableColumn.SortType.DESCENDING);
+            tableView.getSortOrder().add(score);
+            tableView.sort();
 
         }catch (Exception e){
             e.printStackTrace();
