@@ -20,6 +20,7 @@ import util.javafx.ControllerHelper;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collector;
@@ -55,21 +56,22 @@ public class ResultsController {
                 resultStateList = mapper.readValue(data, new TypeReference<List<ResultState>>() {
                 });
               Map<String,Long> map = resultStateList.stream()
-                        .collect(Collectors.groupingBy(ResultState::getWinner,Collectors.counting()));
+                      .collect(Collectors.groupingBy(ResultState::getWinner,Collectors.counting()));
 
-              map.entrySet().forEach(entry -> {
-                  PlayerHighScoreResult playerResult = new PlayerHighScoreResult();
-                  playerResult.setName(entry.getKey());
-                  playerResult.setScore(entry.getValue().intValue());
-                  playerResults.add(playerResult);
-                });
+              map.entrySet().stream()
+                      .sorted(Map.Entry.<String,Long>comparingByValue().reversed())
+                      .limit(5)
+                      .forEach(entry -> {
+                         PlayerHighScoreResult playerResult = new PlayerHighScoreResult();
+                         playerResult.setName(entry.getKey());
+                         playerResult.setScore(entry.getValue().intValue());
+                         playerResults.add(playerResult);
+                    });
 
-            }
+                }
 
             tableView.setItems(playerResults);
-            score.setSortType(TableColumn.SortType.DESCENDING);
-            tableView.getSortOrder().add(score);
-            tableView.sort();
+
 
         }catch (Exception e){
             e.printStackTrace();
