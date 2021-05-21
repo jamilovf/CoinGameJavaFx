@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -68,11 +69,16 @@ public class GameController implements Initializable {
 
     private Image playerIcon = new Image(getClass().getResource("/images/player-icon.png").toExternalForm());
 
+    public void initializeState(String playerName1, String playerName2, Scene scene){
+        resultState.setPlayer1Name(playerName1);
+        resultState.setPlayer2Name(playerName2);
+        player1NameLabel.setText(resultState.getPlayer1Name());
+        player2NameLabel.setText(resultState.getPlayer2Name());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         resultState.setTime(Instant.now());
-        player1NameLabel.setText(resultState.getPlayer1Name());
-        player2NameLabel.setText(resultState.getPlayer2Name());
         player1Icon.setImage(playerIcon);
     }
 

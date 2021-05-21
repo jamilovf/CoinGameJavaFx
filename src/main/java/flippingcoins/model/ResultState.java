@@ -5,17 +5,17 @@ import java.time.Instant;
 
 public class ResultState {
 
-    private static String player1Name;
+    private String player1Name;
 
-    private static String player2Name;
+    private String player2Name;
 
-    private static int player1Steps = 0;
+    private  int player1Steps = 0;
 
-    private static int player2Steps = 0;
+    private  int player2Steps = 0;
 
     private Instant time;
 
-    private static String winner;
+    private  String winner;
 
     public String getWinner() {
         return winner;
