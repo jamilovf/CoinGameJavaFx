@@ -24,7 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="498e634e-88fa-4e6d-a1cf-b4c450776af2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/ResultsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/ResultsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/exceptions/IllegalCoinClickException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/model/Coin.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,7 @@
         <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -58,17 +60,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="flippingcoins.model" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\fuad\CoinGameJavaFX\.idea" />
       <recent name="C:\Users\Fuad Jamilov\Desktop\FJ\Debrecen\4th semester\Software Eng\CoinGameJavaFX" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.FlippingCoinsStateTest.isGameOver">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="flippingcoins.javafx.Main" />
       <module name="CoinGameJavaFX" />
@@ -82,8 +92,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FlippingCoinsStateTest.isGameOver" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CoinGameJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="flippingcoins.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="flippingcoins.model" />
+      <option name="MAIN_CLASS_NAME" value="flippingcoins.model.FlippingCoinsStateTest" />
+      <option name="METHOD_NAME" value="isGameOver" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FlippingCoinsStateTest.isGameOver" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -112,6 +139,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="0" width="816" height="728" key="#Intentions" timestamp="1621641588546">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="0" width="816" height="728" key="#Intentions/0.0.1366.728@0.0.1366.728" timestamp="1621641588546" />
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1621559099262">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -120,26 +151,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1621467324306" />
-    <state width="1323" height="193" key="GridCell.Tab.0.bottom" timestamp="1621597629343">
+    <state width="1323" height="193" key="GridCell.Tab.0.bottom" timestamp="1621640795354">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621597629343" />
-    <state width="1323" height="193" key="GridCell.Tab.0.center" timestamp="1621597629342">
+    <state width="1323" height="193" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621640795354" />
+    <state width="1323" height="193" key="GridCell.Tab.0.center" timestamp="1621640795354">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621597629342" />
-    <state width="1323" height="193" key="GridCell.Tab.0.left" timestamp="1621597629342">
+    <state width="1323" height="193" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621640795354" />
+    <state width="1323" height="193" key="GridCell.Tab.0.left" timestamp="1621640795354">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621597629342" />
-    <state width="1323" height="193" key="GridCell.Tab.0.right" timestamp="1621597629343">
+    <state width="1323" height="193" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621640795354" />
+    <state width="1323" height="193" key="GridCell.Tab.0.right" timestamp="1621640795354">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621597629343" />
+    <state width="1323" height="193" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621640795354" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1621336305247">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1621336305247" />
+    <state x="553" y="171" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1621641619828">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="553" y="171" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1621641619828" />
     <state x="413" y="125" key="extract.method.dialog" timestamp="1621471073773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
