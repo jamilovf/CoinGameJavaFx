@@ -1,6 +1,5 @@
 package flippingcoins.model;
 
-
 import java.time.Instant;
 
 public class ResultState {

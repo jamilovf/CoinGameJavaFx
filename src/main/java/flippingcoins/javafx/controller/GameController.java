@@ -1,5 +1,6 @@
 package flippingcoins.javafx.controller;
 
+import flippingcoins.model.Coin;
 import flippingcoins.model.FlippingCoinsState;
 import flippingcoins.model.ResultState;
 import javafx.event.ActionEvent;
@@ -79,6 +80,7 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         resultState.setTime(Instant.now());
+        gameState.initializeCoins();
         player1Icon.setImage(playerIcon);
     }
 
@@ -87,25 +89,27 @@ public class GameController implements Initializable {
         ImageView im = (ImageView) mouseEvent.getTarget();
 
         if(!isGameFinished()) {
-            if(column == 9 && gameState.coinState.get(column) == 1){
+            if(column == 9 && gameState.coinState.get(column) == Coin.TAIL){
                 endGameLabel.setText("Last coin cannot change from tail to head!");
             }
-            else if (gameState.coinState.get(column) == 0) {
-                gameState.coinState.set(column, 1);
-                modifyStepsOfPlayer();
-                im.setImage(tailImage);
-                if(isGameFinished()){
-                    endGame();
-                }
-            }
             else {
-                gameState.coinState.set(column, 0);
-                modifyStepsOfPlayer();
-                im.setImage(headImage);
-                if(isGameFinished()){
-                    endGame();
-                }
+                Coin coin = gameState.modifyCoinState(column);
+                move(im, coin);
             }
+        }
+    }
+
+    private void move(ImageView im, Coin coin){
+        if(coin == Coin.TAIL){
+            modifyStepsOfPlayer();
+            im.setImage(tailImage);
+        }
+        else {
+            modifyStepsOfPlayer();
+            im.setImage(headImage);
+        }
+        if(isGameFinished()){
+            endGame();
         }
     }
 
@@ -176,4 +180,6 @@ public class GameController implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         ControllerHelper.loadAndShowFXML(fxmlLoader,"/fxml/launch.fxml",stage);
     }
+
+
 }

@@ -36,9 +36,7 @@ public class ResultsController {
     @FXML
     private TableColumn<ResultState, String> name;
     @FXML
-    private TableColumn<ResultState, Double> score;
-
-    ResultState resultState = new ResultState();
+    private TableColumn<ResultState, Integer> score;
 
     @FXML
     public void initialize(){
