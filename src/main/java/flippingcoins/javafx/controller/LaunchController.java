@@ -48,7 +48,7 @@ public class LaunchController {
             Parent root = fxmlLoader.load();
             Scene scene = new Scene(root);
             fxmlLoader.<GameController>getController()
-                    .initializeState(player1NameTextField.getText(),player2NameTextField.getText(),scene);
+                    .initializeState(player1NameTextField.getText(),player2NameTextField.getText());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();

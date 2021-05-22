@@ -67,7 +67,7 @@ public class GameController implements Initializable {
 
     private Image playerIcon = new Image(getClass().getResource("/images/player-icon.png").toExternalForm());
 
-    public void initializeState(String playerName1, String playerName2, Scene scene){
+    public void initializeState(String playerName1, String playerName2){
         resultState.setPlayer1Name(playerName1);
         resultState.setPlayer2Name(playerName2);
         player1NameLabel.setText(resultState.getPlayer1Name());

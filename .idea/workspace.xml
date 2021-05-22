@@ -22,13 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="498e634e-88fa-4e6d-a1cf-b4c450776af2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/javafx/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/model/FlippingCoinsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/model/FlippingCoinsState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flippingcoins/model/ResultState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flippingcoins/model/ResultState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/flippingcoins/model/FlippingCoinsStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/flippingcoins/model/FlippingCoinsStateTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="498e634e-88fa-4e6d-a1cf-b4c450776af2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,22 +147,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1621467324306" />
-    <state width="1323" height="193" key="GridCell.Tab.0.bottom" timestamp="1621697088146">
+    <state width="1323" height="193" key="GridCell.Tab.0.bottom" timestamp="1621697544567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621697088146" />
-    <state width="1323" height="193" key="GridCell.Tab.0.center" timestamp="1621697088145">
+    <state width="1323" height="193" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621697544567" />
+    <state width="1323" height="193" key="GridCell.Tab.0.center" timestamp="1621697544567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621697088145" />
-    <state width="1323" height="193" key="GridCell.Tab.0.left" timestamp="1621697088145">
+    <state width="1323" height="193" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621697544567" />
+    <state width="1323" height="193" key="GridCell.Tab.0.left" timestamp="1621697544567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621697088145" />
-    <state width="1323" height="193" key="GridCell.Tab.0.right" timestamp="1621697088145">
+    <state width="1323" height="193" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621697544567" />
+    <state width="1323" height="193" key="GridCell.Tab.0.right" timestamp="1621697544567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621697088145" />
+    <state width="1323" height="193" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621697544567" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1621336305247">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
