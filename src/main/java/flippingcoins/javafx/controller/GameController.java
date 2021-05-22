@@ -78,6 +78,7 @@ public class GameController implements Initializable {
     }
 
     public void handleClickOnCoin(MouseEvent mouseEvent){
+        endGameLabel.setText("");
         var column= GridPane.getColumnIndex((Node) mouseEvent.getSource());
         ImageView im = (ImageView) mouseEvent.getTarget();
 
