@@ -29,9 +29,6 @@ public class GameController implements Initializable {
     private FXMLLoader fxmlLoader = new FXMLLoader();
 
     @FXML
-    private GridPane gameBoard;
-
-    @FXML
     private Label player1NameLabel;
 
     @FXML
