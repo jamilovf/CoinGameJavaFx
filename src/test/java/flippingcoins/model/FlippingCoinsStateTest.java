@@ -11,12 +11,12 @@ class FlippingCoinsStateTest {
 
     @Test
     void isGameOver() {
-        boolean answer = true;
-        boolean value;
-        List<Integer> list = Arrays.asList(1,1,1,1,1,1,1,1,1,1);
+        List<Integer> listTrue = Arrays.asList(1,1,1,1,1,1,1,1,1,1);
+        List<Integer> listFalse = Arrays.asList(1,1,1,1,1,1,1,1,1,0);
+
         FlippingCoinsState coinsState = new FlippingCoinsState();
 
-        value = coinsState.isGameOver(list);
-        assertEquals(answer,value);
+        assertTrue(coinsState.isGameOver(listTrue));
+        assertFalse(coinsState.isGameOver(listFalse));
     }
 }
