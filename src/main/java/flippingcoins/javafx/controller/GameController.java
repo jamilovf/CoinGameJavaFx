@@ -2,13 +2,13 @@ package flippingcoins.javafx.controller;
 
 import flippingcoins.model.Coin;
 import flippingcoins.model.FlippingCoinsState;
+import flippingcoins.model.PlayerState;
 import flippingcoins.model.ResultState;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -56,6 +56,8 @@ public class GameController implements Initializable {
     private boolean player1Turn = true;
 
     FlippingCoinsState gameState = new FlippingCoinsState();
+
+    PlayerState playerState = new PlayerState();
 
     ResultState resultState = new ResultState();
 
@@ -115,7 +117,7 @@ public class GameController implements Initializable {
     }
 
     private void endGame() {
-        if (player1Turn) {
+        if (playerState.isPlayer1Turn()) {
             endGameLabel.setText(player1NameLabel.getText() + " won the game!");
             resultState.setWinner(player1NameLabel.getText());
         }
@@ -129,16 +131,8 @@ public class GameController implements Initializable {
     }
 
     private void modifyStepsOfPlayer() {
-        if (player1Turn && player1Steps < 3) {
-            player1Steps++;
-            resultState.setPlayer1Steps(resultState.getPlayer1Steps() + 1);
-            checkSteps(player1Steps);
-        }
-        else if(!player1Turn && player2Steps < 3) {
-            player2Steps++;
-            resultState.setPlayer2Steps(resultState.getPlayer2Steps() + 1);
-            checkSteps(player2Steps);
-        }
+      int steps = playerState.modifySteps(resultState);
+      checkSteps(steps);
     }
 
     private void checkSteps(int steps){
@@ -155,20 +149,18 @@ public class GameController implements Initializable {
     }
 
     private void switchPlayer() {
-        if((player1Turn && player1Steps == 0) || (!player1Turn && player2Steps == 0)){
+        if((playerState.isPlayer1Turn() && playerState.getPlayer1Steps() == 0)
+                || (!playerState.isPlayer1Turn() && playerState.getPlayer2Steps() == 0)){
             endGameLabel.setText("0 flips, please, flip coin!");;
         }
         else {
-            if (player1Turn) {
-                player1Turn = false;
-                player1Steps = 0;
-                player1Icon.setImage(null);
-                player2Icon.setImage(playerIcon);
-            } else {
-                player1Turn = true;
-                player2Steps = 0;
+            if (playerState.switchPlayer()) {
                 player2Icon.setImage(null);
                 player1Icon.setImage(playerIcon);
+            }
+            else {
+                player1Icon.setImage(null);
+                player2Icon.setImage(playerIcon);
             }
         }
     }
