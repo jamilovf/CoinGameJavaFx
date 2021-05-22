@@ -49,12 +49,6 @@ public class GameController implements Initializable {
     @FXML
     private Button switchButton;
 
-    private static int player1Steps = 0;
-
-    private static int player2Steps = 0;
-
-    private boolean player1Turn = true;
-
     FlippingCoinsState gameState = new FlippingCoinsState();
 
     PlayerState playerState = new PlayerState();
