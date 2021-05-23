@@ -2,6 +2,9 @@ package flippingcoins.model;
 
 import lombok.Data;
 
+/**
+ * Class representing the dynamic state of the players inside game.
+ */
 @Data
 public class PlayerState {
     private int player1Steps;
@@ -14,6 +17,14 @@ public class PlayerState {
         player1Turn = true;
     }
 
+    /**
+     * Modifies steps of player.
+     * Checking whose turn and steps less than 3 or not.
+     * Increments steps of player.
+     * Increments steps of player for result state.
+     * @param resultState instance of result state.
+     * @return steps of player.
+     */
     public int modifySteps(ResultState resultState) {
         if (player1Turn && player1Steps < 3) {
             player1Steps++;
@@ -29,6 +40,13 @@ public class PlayerState {
         }
     }
 
+    /**
+     * Switches player's turn.
+     * Checking whose turn.
+     * Switching player's turn.
+     * Setting steps of player to 0.
+     * @return player's turn.
+     */
     public boolean switchPlayer(){
         if (player1Turn) {
             player1Turn = false;

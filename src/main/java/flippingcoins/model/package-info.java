@@ -1,0 +1,1 @@
+package flippingcoins.model;

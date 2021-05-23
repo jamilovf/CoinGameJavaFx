@@ -1,26 +1,12 @@
 package flippingcoins.model;
 
+import lombok.Data;
+
+/**
+ * Class representing the final result for players to store in {@code tableView}.
+ */
+@Data
 public class PlayerHighScoreResult {
     private String name;
     private int score;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-
-
-
 }
