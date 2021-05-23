@@ -15,8 +15,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Class provides writer with the help of Jackson
+ */
 public class JsonWriter {
 
+    /**
+     * Writing data to data.json file based protocol of class
+     * @param resultState
+     */
     public static void writer(ResultState resultState){
         String protocol = resultState.getClass().getResource("").getProtocol();
         if(Objects.equals(protocol, "file")){
@@ -27,6 +34,10 @@ public class JsonWriter {
         }
     }
 
+    /**
+     * Writing data from IDE to data.json file
+     * @param resultState
+     */
     private static void writeFromIDE(ResultState resultState){
         InputStream data = GameController.class.getResourceAsStream("/data.json");
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
@@ -47,6 +58,10 @@ public class JsonWriter {
         }
     }
 
+    /**
+     * Writing data from Jar to data.json file
+     * @param resultState
+     */
     private static void writeFromJar(ResultState resultState){
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
         try {

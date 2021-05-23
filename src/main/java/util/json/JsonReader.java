@@ -6,8 +6,16 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URLDecoder;
 
+/**
+ * Class provides reader with the help of Jackson
+ */
 public class JsonReader {
 
+    /**
+     * Reading data from IDE
+     * @param controller
+     * @return data.json file
+     */
     public static FileInputStream readFromJar(ResultsController controller){
         try {
             String path = controller.getClass().getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
@@ -22,6 +30,11 @@ public class JsonReader {
         return null;
     }
 
+    /**
+     * Reading data from Jar
+     * @param controller
+     * @return data.json file
+     */
     public static InputStream readFromIde(ResultsController controller){
         return controller.getClass().getResourceAsStream("/data.json");
     }

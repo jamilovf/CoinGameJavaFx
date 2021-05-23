@@ -38,42 +38,6 @@ public class ResultsController {
     @FXML
     private TableColumn<ResultState, Integer> score;
 
-  /*  @FXML
-    public void initialize(){
-        Logger.debug("Loading high scores...");
-        name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        score.setCellValueFactory(new PropertyValueFactory<>("score"));
-
-        File data = new File(GameController.class.getClassLoader().getResource("data.json").getFile());
-        ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
-
-        List<ResultState> resultStateList;
-        ObservableList<PlayerHighScoreResult> playerResults = FXCollections.observableArrayList();
-
-        try {
-            if(data.length()!=0){
-                resultStateList = mapper.readValue(data, new TypeReference<List<ResultState>>() {
-                });
-              Map<String,Long> map = resultStateList.stream()
-                      .collect(Collectors.groupingBy(ResultState::getWinner,Collectors.counting()));
-
-              map.entrySet().stream()
-                      .sorted(Map.Entry.<String,Long>comparingByValue().reversed())
-                      .limit(5)
-                      .forEach(entry -> {
-                         PlayerHighScoreResult playerResult = new PlayerHighScoreResult();
-                         playerResult.setName(entry.getKey());
-                         playerResult.setScore(entry.getValue().intValue());
-                         playerResults.add(playerResult);
-                    });
-                }
-            tableView.setItems(playerResults);
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }*/
-
     @FXML
     public void initialize(){
         Logger.debug("Loading high scores...");
