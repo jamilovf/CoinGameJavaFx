@@ -9,30 +9,69 @@ import flippingcoins.javafx.controller.GameController;
 import flippingcoins.model.ResultState;
 import org.tinylog.Logger;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class JsonWriter {
 
     public void writer(ResultState resultState){
-        File file = new File(GameController.class.getClassLoader().getResource("data.json").getFile());
-        ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
-        ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+        String protocol = resultState.getClass().getResource("").getProtocol();
+        if(Objects.equals(protocol, "file")){
+            writeFromIDE(resultState);
+        }
+        else if(Objects.equals(protocol, "jar")) {
+            writeFromJar(resultState);
+        }
+    }
 
-        try{
+    private static void writeFromIDE(ResultState resultState){
+        InputStream data = GameController.class.getResourceAsStream("/data.json");
+        ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
+        try {
             List<ResultState> resultStatesList = new ArrayList<>();
-            if(file.length() != 0){
-                resultStatesList = mapper.readValue(file, new TypeReference<List<ResultState>>() {
+            if(data.available() != 0){
+                resultStatesList = mapper.readValue(data, new TypeReference<List<ResultState>>() {
                 });
             }
             resultStatesList.add(resultState);
-            writer.writeValue(file,resultStatesList);
+            OutputStream out = new FileOutputStream(GameController.class.getResource("/data.json").getFile());
+            ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+            writer.writeValue(out,resultStatesList);
+            Logger.info("Game results have been saved...");
         }
         catch (Exception e){
             e.printStackTrace();
         }
-        Logger.info("Game results have been saved...");
+    }
+
+    private static void writeFromJar(ResultState resultState){
+        ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
+        try {
+            String path = resultState.getClass().getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
+            System.out.println(path);
+            path = path.substring(0, path.lastIndexOf("/") + 1);
+            System.out.println(path);
+            path = URLDecoder.decode(path, "UTF-8");
+            FileInputStream data = new FileInputStream(path+"classes/data.json");
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(data));
+            List<ResultState> resultStatesList = new ArrayList<>();
+
+            if(data.available()!=0){
+                resultStatesList = mapper.readValue(in, new TypeReference<List<ResultState>>() {
+                });
+            }
+            resultStatesList.add(resultState);
+            OutputStream out = new FileOutputStream(path+"classes/data.json");
+            ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+            writer.writeValue(out,resultStatesList);
+            Logger.info("Game results have been saved...");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

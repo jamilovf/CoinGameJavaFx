@@ -49,7 +49,7 @@ public class ResultsController {
         File data = new File(GameController.class.getClassLoader().getResource("data.json").getFile());
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
 
-        List<ResultState> resultStateList = new ArrayList<>();
+        List<ResultState> resultStateList;
         ObservableList<PlayerHighScoreResult> playerResults = FXCollections.observableArrayList();
 
         try {
