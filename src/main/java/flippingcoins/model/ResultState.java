@@ -7,6 +7,7 @@ import java.time.Instant;
 /**
  * Class representing the result state of the players.
  */
+
 @Data
 public class ResultState {
 
