@@ -56,8 +56,6 @@ public class GameController implements Initializable {
 
     ResultState resultState = new ResultState();
 
-    JsonWriter jsonWriter = new JsonWriter();
-
     private Image headImage = new Image(getClass().getResource("/images/head.png").toExternalForm());
 
     private Image tailImage = new Image(getClass().getResource("/images/tail.png").toExternalForm());
@@ -133,7 +131,7 @@ public class GameController implements Initializable {
 
         Logger.warn("Game is ended!!!");
 
-        jsonWriter.writer(resultState);
+        JsonWriter.writer(resultState);
 
     }
 

@@ -17,7 +17,7 @@ import java.util.Objects;
 
 public class JsonWriter {
 
-    public void writer(ResultState resultState){
+    public static void writer(ResultState resultState){
         String protocol = resultState.getClass().getResource("").getProtocol();
         if(Objects.equals(protocol, "file")){
             writeFromIDE(resultState);

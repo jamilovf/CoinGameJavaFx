@@ -18,13 +18,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
 import util.javafx.ControllerHelper;
+import util.json.JsonReader;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -40,7 +38,7 @@ public class ResultsController {
     @FXML
     private TableColumn<ResultState, Integer> score;
 
-    @FXML
+  /*  @FXML
     public void initialize(){
         Logger.debug("Loading high scores...");
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -68,17 +66,55 @@ public class ResultsController {
                          playerResult.setScore(entry.getValue().intValue());
                          playerResults.add(playerResult);
                     });
-
                 }
-
             tableView.setItems(playerResults);
-
 
         }catch (Exception e){
             e.printStackTrace();
         }
+    }*/
 
+    @FXML
+    public void initialize(){
+        Logger.debug("Loading high scores...");
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        score.setCellValueFactory(new PropertyValueFactory<>("score"));
+
+        ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
+
+        List<ResultState> resultStateList;
+        ObservableList<PlayerHighScoreResult> playerResults = FXCollections.observableArrayList();
+
+        String protocol = this.getClass().getResource("").getProtocol();
+        try {
+            var data = JsonReader.readFromIde(this);
+            if(Objects.equals(protocol, "jar")){
+                data = JsonReader.readFromJar(this);
+            }
+
+            if(data.available()!=0){
+                resultStateList = mapper.readValue(data, new TypeReference<List<ResultState>>() {
+                });
+                Map<String,Long> map = resultStateList.stream()
+                        .collect(Collectors.groupingBy(ResultState::getWinner,Collectors.counting()));
+
+                map.entrySet().stream()
+                        .sorted(Map.Entry.<String,Long>comparingByValue().reversed())
+                        .limit(5)
+                        .forEach(entry -> {
+                            PlayerHighScoreResult playerResult = new PlayerHighScoreResult();
+                            playerResult.setName(entry.getKey());
+                            playerResult.setScore(entry.getValue().intValue());
+                            playerResults.add(playerResult);
+                        });
+            }
+            tableView.setItems(playerResults);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
+
     public void backAction(ActionEvent actionEvent) throws IOException {
         Logger.debug("{} is pressed", ((Button) actionEvent.getSource()).getText());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
