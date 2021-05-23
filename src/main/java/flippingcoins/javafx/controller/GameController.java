@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.tinylog.Logger;
 import util.javafx.ControllerHelper;
 import util.json.JsonWriter;
 
@@ -82,13 +83,17 @@ public class GameController implements Initializable {
         var column= GridPane.getColumnIndex((Node) mouseEvent.getSource());
         ImageView im = (ImageView) mouseEvent.getTarget();
 
+        Logger.debug("Coin {} is pressed", column);
+
         if(!isGameFinished()) {
             if(column == 9 && gameState.coinState.get(column) == Coin.TAIL){
                 endGameLabel.setText("Last coin cannot change from tail to head!");
+                Logger.warn("Invalid move");
             }
             else {
                 Coin coin = gameState.modifyCoinState(column);
                 move(im, coin);
+                Logger.debug(gameState);
             }
         }
     }
@@ -97,10 +102,12 @@ public class GameController implements Initializable {
         if(coin == Coin.TAIL){
             modifyStepsOfPlayer();
             im.setImage(tailImage);
+            Logger.debug("Coin is flipped to TAIL");
         }
         else {
             modifyStepsOfPlayer();
             im.setImage(headImage);
+            Logger.debug("Coin is flipped to HEAD");
         }
         if(isGameFinished()){
             endGame();
@@ -108,6 +115,7 @@ public class GameController implements Initializable {
     }
 
     private boolean isGameFinished() {
+        Logger.debug("Checking game finished or not...");
         return gameState.isGameOver(gameState.coinState);
     }
 
@@ -122,12 +130,17 @@ public class GameController implements Initializable {
         }
         restartButton.setVisible(true);
         switchButton.setDisable(true);
+
+        Logger.warn("Game is ended!!!");
+
         jsonWriter.writer(resultState);
+
     }
 
     private void modifyStepsOfPlayer() {
-      int steps = playerState.modifySteps(resultState);
-      checkSteps(steps);
+        Logger.debug("Modifying steps of player...");
+        int steps = playerState.modifySteps(resultState);
+        checkSteps(steps);
     }
 
     private void checkSteps(int steps){
@@ -140,27 +153,33 @@ public class GameController implements Initializable {
     }
 
     public void switchAction(ActionEvent actionEvent) throws IOException {
+        Logger.debug("{} is pressed", ((Button) actionEvent.getSource()).getText());
         switchPlayer();
     }
 
     private void switchPlayer() {
         if((playerState.isPlayer1Turn() && playerState.getPlayer1Steps() == 0)
                 || (!playerState.isPlayer1Turn() && playerState.getPlayer2Steps() == 0)){
-            endGameLabel.setText("0 flips, please, flip coin!");;
+            endGameLabel.setText("0 flips, please, flip coin!");
+            Logger.warn("Invalid switch");
         }
         else {
             if (playerState.switchPlayer()) {
                 player2Icon.setImage(null);
                 player1Icon.setImage(playerIcon);
+                Logger.debug("Switched to {} ",player1NameLabel.getText());
             }
             else {
                 player1Icon.setImage(null);
                 player2Icon.setImage(playerIcon);
+                Logger.debug("Switched to {} ",player2NameLabel.getText());
             }
         }
     }
 
     public void restartAction(ActionEvent actionEvent) throws IOException {
+        Logger.debug("{} is pressed", ((Button) actionEvent.getSource()).getText());
+        Logger.info("Restarting game");
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         ControllerHelper.loadAndShowFXML(fxmlLoader,"/fxml/launch.fxml",stage);
     }

@@ -3,6 +3,8 @@ package flippingcoins.javafx.controller;
 import flippingcoins.model.ResultState;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import org.tinylog.Logger;
 import util.javafx.*;
 
 import javafx.event.ActionEvent;
@@ -32,16 +34,20 @@ public class LaunchController {
     private Label errorLabel;
 
     public void startAction(ActionEvent actionEvent) throws IOException {
+        Logger.debug("{} is pressed", ((Button) actionEvent.getSource()).getText());
         errorLabel.setText("");
 
         if(player1NameTextField.getText().isEmpty() && player2NameTextField.getText().isEmpty()){
             errorLabel.setText("Players, please, enter your names!!!");
+            Logger.warn("Empty text fields!!!");
         }
         else if(player1NameTextField.getText().isEmpty()){
             errorLabel.setText("Player1, please, enter your name!!!");
+            Logger.warn("Empty text field!!!");
         }
         else if(player2NameTextField.getText().isEmpty()){
             errorLabel.setText("Player2, please, enter your name!!!");
+            Logger.warn("Empty text field!!!");
         }
         else{
             fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/game.fxml"));
@@ -52,10 +58,13 @@ public class LaunchController {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
+            Logger.info("1st player name is set to {} and 2nd player name is set to {}, " +
+                    "loading game scene", player1NameTextField.getText(),player2NameTextField.getText());
         }
     }
 
     public void highScoresAction(ActionEvent actionEvent) throws IOException {
+        Logger.debug("{} is pressed", ((Button) actionEvent.getSource()).getText());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         ControllerHelper.loadAndShowFXML(fxmlLoader,"/fxml/results.fxml",stage);
     }

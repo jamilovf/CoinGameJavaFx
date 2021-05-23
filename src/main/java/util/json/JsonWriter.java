@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import flippingcoins.javafx.controller.GameController;
 import flippingcoins.model.ResultState;
+import org.tinylog.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,5 +33,6 @@ public class JsonWriter {
         catch (Exception e){
             e.printStackTrace();
         }
+        Logger.info("Game results have been saved...");
     }
 }
